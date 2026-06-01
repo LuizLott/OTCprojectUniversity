@@ -1,2 +1,2 @@
 # OTCprojectUniversity
-A college project where I'm doing predictive analytics for a market study.
+Projeto acadêmico de análise preditiva de mercado utilizando simulação estocástica de dados como base para exploração e tomada de decisões estratégicas.
