@@ -23,7 +23,7 @@ Para a modelagem preditiva do preço da saca de café beneficiado (60 kg) no Par
 
 Foram realizados três testes para validar a aderência e as premissas do modelo:
 
-* **Teste t do coeficiente angular** ($H_0: \beta_1 = 0$): $t = 7,83$, $p\text{-valor} < 0,0001$. Rejeita-se $H_0$, comprovando que a tendência de alta identificada ($\beta_1 = \text{R\$ } 21,40/\text{mês}$) é estatisticamente significativa e não fruto do acaso.
+* **Teste t do coeficiente angular** ($H_0: \beta_1 = 0$): $t = 7,83$, $p\text{-valor} < 0,0001$. Rejeita-se $H_0$, comprovando que a tendência de alta identificada ($\beta_1 =$ R$ 21,40/mês) é estatisticamente significativa e não fruto do acaso.
 * **Teste F de significância global da regressão**: $F = 61,26$, $p\text{-valor} < 0,0001$, confirmando que o modelo como um todo é estatisticamente significativo.
 * **Teste de Shapiro-Wilk** (normalidade dos resíduos): $W = 0,9685$, $p\text{-valor} = 0,123$. Como $p > 0,05$, não se rejeita a hipótese de normalidade dos resíduos, sustentando a premissa de erro gaussiano do modelo.
 
