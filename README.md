@@ -1,8 +1,8 @@
-# ☕ Oeste Coffee Tech — Modelo Econométrico de Previsão de Preços (2021–2026)
+# ☕ Oeste Coffee Tech — Modelo Econométrico de Previsão de Preços (2021–2027)
 
-Este repositório contém a modelagem econométrica quantitativa de séries temporais desenvolvida em Python para o projeto de viabilidade fictícia feita para estudo em universidade
+Este repositório contém a modelagem econométrica quantitativa de séries temporais desenvolvida em Python para o projeto de viabilidade de uma indústria cafeeira fictícia.
 
-O objetivo principal deste código é projetar o comportamento dos preços do café arábica beneficiado no mercado físico paranaense para o ano de 2026, fundamentando a estrutura de custos de matéria-prima.
+O objetivo principal deste código é projetar o comportamento dos preços do café arábica beneficiado no mercado físico paranaense para os anos de 2026-2027, fundamentando a estrutura de custos de matéria-prima.
 
 Para a modelagem preditiva do preço da saca de café beneficiado (60 kg) no Paraná, foi utilizado um modelo de regressão linear simples estimado por Mínimos Quadrados Ordinários (MQO/OLS), tendo como variável dependente o preço da saca (R$) e como variável explicativa o índice temporal (mês). A justificativa para a escolha desse modelo baseia-se na identificação de uma tendência de crescimento de longo prazo na série histórica (jan/2021 a dez/2025, n=60 observações mensais), o que torna a regressão linear uma abordagem adequada para capturar a direção e magnitude médias dessa tendência, servindo de base para a projeção de curto e médio prazo. Os dados utilizados têm como fonte a SEAB/DERAL (Preços Recebidos pelo Produtor).
 
