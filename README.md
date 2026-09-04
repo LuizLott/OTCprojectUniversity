@@ -34,7 +34,7 @@ Foram realizados três testes para validar a aderência e as premissas do modelo
 | Métrica | Valor | Interpretação |
 | :--- | :--- | :--- |
 | **$R^2$** | `0,5137` | **51,37%** da variação do preço da saca é explicada pela tendência linear de tempo. |
-| **MAE** | `R$ 300,67` | Em média, as estimativas do modelo se desviam R$ 300,67 do valor real observado. |
+| **MAE** | `R$ 300,67` | Em média, as estimativas do modelo se desviam em R$ 300,67 do valor real observado. |
 | **RMSE** | `R$ 360,63` | O desvio típico dos erros é de R$ 360,63; por ser sempre $\ge MAE$, sua proximidade indica ausência de erros extremos isolados (*outliers*). |
 | **$\beta_0$ (intercepto)** | `R$ 574,97` | Preço estimado do modelo no mês inicial da série (jan/2021). |
 | **$\beta_1$ (tendência)** | `R$ 21,40/mês` | Crescimento médio estrutural do preço por mês, estatisticamente significativo. |
@@ -45,8 +45,14 @@ O $R^2$ de 51% é coerente com a natureza volátil de uma série de preços de *
 
 ## Limitações Identificadas
 
+Limitações Identificadas
+
 A estatística de Durbin-Watson (DW = 0,21) indica forte autocorrelação positiva nos resíduos, o que viola a premissa de independência dos erros do modelo MQO. Isso sugere que os testes de significância (t e F) podem estar superestimados e que modelos capazes de capturar a dependência temporal da série (como ARIMA) poderiam refinar essa estimativa em trabalhos futuros.
 
 Adicionalmente, por se tratar de um modelo de regressão simples com o tempo como única variável explicativa, o coeficiente β₁ (tendência) provavelmente incorpora o efeito de variáveis omitidas relevantes que também evoluem ao longo do período analisado, como câmbio (o café é cotado internacionalmente em dólar), choques de oferta (safra, condições climáticas) e custos de insumos. Como essas variáveis não foram incluídas explicitamente no modelo, seus efeitos ficam absorvidos no termo de erro, o que caracteriza um possível viés de variável omitida. A "tendência temporal" estimada não é uma tendência pura, mas um proxy do efeito conjunto de fatores correlacionados com o tempo. Trabalhos futuros poderiam incluir essas variáveis explicitamente como controles, reduzindo esse viés.
 
 A validação da projeção contra a cotação de mercado (Maringá/PR, R$ 1.514,00/saca) evidenciou que o modelo linear tende a superestimar o preço no curto prazo, por não capturar a reversão à média característica de commodities agrícolas após choques de oferta.
+
+Consequência prática para a projeção 2026: dado o DW de 0,21, o intervalo de confiança de ±R$719 exibido no gráfico não é confiável; a fórmula padrão de erro-padrão assume resíduos independentes, premissa claramente violada aqui. Na prática, isso significa que a banda de incerteza da previsão 2026 provavelmente está subestimada, e o intervalo real de variação do preço é maior do que o gráfico sugere.
+
+Próximos passos: a correção mais direta seria reestimar o modelo com uma abordagem SARIMAX, incluindo como regressores exógenos o câmbio USD/BRL e, se disponível, um proxy de safra/produção. Um modelo ARIMA puro resolveria a autocorrelação nos resíduos, mas não o viés de variável omitida; para isso, seria necessário incorporar explicitamente os fatores estruturais (câmbio, clima, custos) que hoje estão implícitos na tendência estimada.
